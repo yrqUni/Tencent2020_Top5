@@ -380,7 +380,7 @@ def create_model_AZ_cnn_lstm(rnn_unit, concated_id_emb_dict):
     # embedding all connected
     concat_emb = keras.layers.concatenate(layers2concat)
     # 4 route cnn
-    xconv1 = keras.layers.Conv1D(filters=x.shape[-1].value,
+    xconv1 = keras.layers.Conv1D(filters=concat_emb.shape[-1].value,
                                  kernel_size=1,
                                  padding='same',
                                  activation='relu')(concat_emb)
